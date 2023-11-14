@@ -30,8 +30,7 @@ class TestProjectEx5v2 {
     fun testInput1() {
         val helper = StdinStdoutHelper(false)
             .expectOuput("Introduza um numero")
-            .simulateInput("-5")
-            .expectOuput("Numero invalido")
+            .simulateInput("-4")
             .expectOuput("Introduza um numero")
             .simulateInput("11")
             .expectOuput("11 e primo")

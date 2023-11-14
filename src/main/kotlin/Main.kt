@@ -1,4 +1,4 @@
-fun ePrimo(num: Int): Boolean{
+fun ePrimo(num: Int): Boolean {
     if (num <= 1) {
         return false
     }
@@ -13,22 +13,16 @@ fun ePrimo(num: Int): Boolean{
         divisor++
     }
 
-    /* for (i in 2 until num) {
-         if (num % i == 0) {
-             return false
-         }
-     }*/
-
     return true
 }
-fun main() {
-    do{
-        println("Introduza um numero")
-        var numero = readln().toInt()
-        when{
-            (ePrimo(numero) == false && numero <= 0) -> println("Numero invalido")
-            (ePrimo(numero) == true) -> println("$numero e primo")
 
+fun main() {
+    do {
+        println("Introduza um numero")
+        val numero = readln().toInt()
+        val ePrimo = ePrimo(numero)
+        if (ePrimo) {
+            println("$numero e primo")
         }
-    }while(ePrimo(numero) == false)
+    } while (ePrimo(numero) == false)
 }
