@@ -1,17 +1,22 @@
-import org.junit.Test
-import kotlin.test.assertEquals
+import org.dropproject.stdinstdoutjunithelper.StdinStdoutHelper
+import org.junit.jupiter.api.*
+import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Test
 
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation::class)
+@Timeout(1)
 class TestProjectEx5v2 {
 
-    @Test(timeout = 500)
+    @Test
+    @Order(1)
     fun testPrimoFalse() {
         assertEquals(ePrimo(1), false)
         assertEquals(ePrimo(4), false)
         assertEquals(ePrimo(36), false)
         assertEquals(ePrimo(52), false)
     }
-    @Test(timeout = 500)
+    @Test
+    @Order(2)
     fun testPrimoTrue() {
         assertEquals(ePrimo(7),true)
         assertEquals(ePrimo(2),true)
@@ -19,38 +24,42 @@ class TestProjectEx5v2 {
         assertEquals(ePrimo(137),true)
         assertEquals(ePrimo(3),true)
     }
-    @Test(timeout = 500)
+    @Test
+    @Order(3)
     fun testPrimoNegative() {
         assertEquals(ePrimo(-2),false)
         assertEquals(ePrimo(-10),false)
         assertEquals(ePrimo(-64),false)
         assertEquals(ePrimo(-137),false)
     }
-    @Test(timeout = 500)
+    @Test
+    @Order(4)
     fun testInput1() {
         val helper = StdinStdoutHelper(false)
-            .expectOuput("Introduza um numero")
+            .expectOutput("Introduza um numero")
             .simulateInput("-4")
-            .expectOuput("Introduza um numero")
+            .expectOutput("Introduza um numero")
             .simulateInput("11")
-            .expectOuput("11 e primo")
+            .expectOutput("11 e primo")
+            
 
         helper.start()
         main()
         helper.stop()
     }
 
-    @Test(timeout = 500)
+    @Test
+    @Order(5)
     fun testOK1() {
 
         val helper = StdinStdoutHelper(false)
-            .expectOuput("Introduza um numero")
+            .expectOutput("Introduza um numero")
             .simulateInput("4")
-            .expectOuput("Introduza um numero")
+            .expectOutput("Introduza um numero")
             .simulateInput("10")
-            .expectOuput("Introduza um numero")
+            .expectOutput("Introduza um numero")
             .simulateInput("5")
-            .expectOuput("5 e primo")
+            .expectOutput("5 e primo")
 
 
         helper.start()
@@ -58,13 +67,14 @@ class TestProjectEx5v2 {
         helper.stop()
     }
 
-    @Test(timeout = 500)
+    @Test
+    @Order(6)
     fun testOK2() {
 
         val helper = StdinStdoutHelper(false)
-            .expectOuput("Introduza um numero")
+            .expectOutput("Introduza um numero")
             .simulateInput("37")
-            .expectOuput("37 e primo")
+            .expectOutput("37 e primo")
 
         helper.start()
         main()
