@@ -1,7 +1,7 @@
-# Ficha prática 10<
+# Ficha prática 10
 
 Desenvolva um programa para verificar se um número introduzido pelo utilizador é primo, conforme descrito no exercício
-5.2 da ficha 10.</p>
+4.2 da ficha 10.</p>
 
 ## Instruções
 
